@@ -3,7 +3,7 @@
 .PHONY: docker_auth docker_build docker_tag docker_push
 
 docker_auth:
-	echo "$$DOCKERHUB_PASSWORD" | docker login -u "$$DOCKERHUB_USERNAME" --password-stdin
+	echo "$$DOCKERHUB_PASSWORD" | docker login --username "$$DOCKERHUB_USERNAME" --password-stdin
 
 docker_build:
 	docker build -t udagram-api-feed ./udagram-api-feed
