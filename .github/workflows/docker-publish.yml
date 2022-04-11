@@ -2,8 +2,9 @@ name: Push Docker Images
 
 on:
   push:
-    branches:  # Run the workflow for every push in master branch
+    branches:  # Run the workflow for every push in master and devlop branches
       - 'master'
+      - 'develop'
 
 jobs:
   push:
