@@ -22,7 +22,7 @@ jobs:
         run : |
           echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-          docker build -t ${{ matrix.services }} ./${{ matrix.services }}
+          docker build -t ${{ matrix.services }} ${{ matrix.services }}
           docker tag ${{ matrix.services }} meharusama/${{ matrix.services }}:$GITHUB_SHA
           docker push meharusama/${{ matrix.services }}:$GITHUB_SHA
 
