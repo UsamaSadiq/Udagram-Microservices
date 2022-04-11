@@ -7,7 +7,7 @@ docker_auth:
 
 docker_build:
 	docker build -t udagram-api-feed ./udagram-api-feed
-	docker build -t udagram-api-user ./udagram-api-usr
+	docker build -t udagram-api-user ./udagram-api-user
 	docker build -t udagram-frontend ./udagram-frontend
 	docker build -t reverseproxy ./udagram-reverseproxy
 	
