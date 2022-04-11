@@ -9,25 +9,15 @@ on:
 jobs:
   push:
     runs-on: ubuntu-latest
-    environment: DOCKERHUB
-    strategy:
-      matrix:
-        services: ['udagram-api-feed', 'udagram-api-user', 'udagram-frontend', 'reverseproxy']
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Check project files
-        run: ls
-
       - name: Build and Push docker image
-        run : |
-          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-
-          docker build -t ${{ matrix.services }} ${{ matrix.services }}
-          docker tag ${{ matrix.services }} meharusama/${{ matrix.services }}:$GITHUB_SHA
-          docker push meharusama/${{ matrix.services }}:$GITHUB_SHA
-
+        env:
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        run : make docker_push
+      
       - name: Success Message
-        run: echo "Docker Image for service ${{ matrix.services }} built and pushed successfully"
+        run: echo "Docker Images built and pushed successfully"
