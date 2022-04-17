@@ -1,0 +1,24 @@
+name: Push Docker Images
+
+on:
+  push:
+    branches:  # Run the workflow for every push in master and devlop branches
+      - 'master'
+      - 'develop'
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    environment: DOCKERHUB
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build and Push docker image
+        env:
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        run : make docker_push
+      
+      - name: Success Message
+        run: echo "Docker Images built and pushed successfully"
