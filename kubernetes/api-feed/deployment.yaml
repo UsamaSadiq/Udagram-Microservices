@@ -15,7 +15,7 @@ spec:
         service: api-feed
     spec:
       containers:
-        - image: meharusama/udagram-api-feed:v1
+        - image: meharusama/udagram-api-feed:latest
           name: api-feed
           imagePullPolicy: Always
           resources:

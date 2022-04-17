@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: meharusama/udagram-frontend:v2
+          image: meharusama/udagram-frontend:latest
           ports:
             - containerPort: 80
