@@ -36,3 +36,4 @@ kubectl describe hpa
 ```bash
 kubectl logs {pod_name}
 ```
+![img.png](logs-pod-id.png)
