@@ -3,7 +3,7 @@ kind: ConfigMap
 data:
   AWS_BUCKET: usama-microservices-bucket
   AWS_PROFILE: default
-  AWS_REGION: us-east-1
+  AWS_REGION: us-east-2
   JWT_SECRET: hello
   POSTGRES_DB: postgres
   POSTGRES_HOST: usama-microservices-db.c3el5h90lsdq.us-east-1.rds.amazonaws.com
