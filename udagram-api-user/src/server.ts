@@ -25,13 +25,13 @@ import {V0_USER_MODELS} from './controllers/v0/model.index';
   // something that will be covered in the next course.
   app.use(cors({
     allowedHeaders: [
-      'Origin', 'X-Requested-With',
+      'Origin', '*',
       'Content-Type', 'Accept',
       'X-Access-Token', 'Authorization',
     ],
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
     preflightContinue: true,
-    origin: '*',
+    origin: config.url,
   }));
 
   app.use('/api/v0/', IndexRouter);
