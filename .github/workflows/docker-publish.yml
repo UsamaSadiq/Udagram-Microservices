@@ -2,7 +2,7 @@ name: Push Docker Images
 
 on:
   push:
-    branches:  # Run the workflow for every push in master and devlop branches
+    branches:  # Run the workflow for every push in master and develop branches
       - 'master'
       - 'develop'
 
@@ -16,8 +16,8 @@ jobs:
 
       - name: Build and Push docker image
         env:
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
         run : make docker_push
       
       - name: Success Message

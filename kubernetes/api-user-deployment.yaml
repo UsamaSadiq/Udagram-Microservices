@@ -18,10 +18,6 @@ spec:
         - image: meharusama/udagram-api-user:latest
           name: api-user
           imagePullPolicy: Always
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
           env:
             - name: URL
               valueFrom:
