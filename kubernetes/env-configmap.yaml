@@ -6,7 +6,7 @@ data:
   AWS_REGION: us-east-2
   JWT_SECRET: hello
   POSTGRES_DB: postgres
-  POSTGRES_HOST: usama-microservices-db.c3el5h90lsdq.us-east-1.rds.amazonaws.com
-  URL: http://a39b10b400baa4f1384a1ccf88a119d4-546837746.us-east-2.elb.amazonaws.com
+  POSTGRES_HOST: usama-microservices-db.clhrdsehkzog.us-east-2.rds.amazonaws.com
+  URL: a80fa18ac2fa04dd192db0629873e92f-461264434.us-east-2.elb.amazonaws.com 
 metadata:
   name: env-config
